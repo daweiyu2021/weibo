@@ -22,7 +22,7 @@ class SessionsController extends Controller
             'password'=>'required'
         ]);
 
-        if(Auth::attempt($credentials)){
+        if(Auth::attempt($credentials,$request->has('remember'))){
 
             // 流程分析:
             // 使用email字段的值在数据库查找
