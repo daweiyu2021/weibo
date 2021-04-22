@@ -29,3 +29,10 @@ Route::post('password/email',  'PasswordController@sendResetLinkEmail')->name('p
 
 Route::get('password/reset/{token}',  'PasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset',  'PasswordController@reset')->name('password.update');
+
+Route::get('products',function(){
+    return view('products.show');
+});
+Route::get('cropper', function(){
+    return view('cropper.show');
+});
