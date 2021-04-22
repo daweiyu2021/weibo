@@ -36,3 +36,4 @@ Route::get('products',function(){
 Route::get('cropper', function(){
     return view('cropper.show');
 });
+Route::resource('statuses','StatusesController',['only'=>['store','destroy']]);
