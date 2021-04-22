@@ -55,8 +55,13 @@ class User extends Authenticatable
         return "https://cdn.v2ex.com/gravatar/$hash?s=$size";
     }
 
-   public function statuses(){
+    public function statuses(){
         return $this->hasMany(Status::class);
     }
+
+    public function feed(){
+        return $this->statuses()->orderBy('created_at','desc');
+    }
+
 
 }
