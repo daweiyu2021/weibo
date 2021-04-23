@@ -1,4 +1,4 @@
-<form action="{{ route('statuses.store') }}" method="POST">
+<form action="{{ route('statuses.store') }}" method="POST" onsubmit="return confirm('您确定要删除本条微博吗？');">
   @include('shared._errors')
   {{ csrf_field() }}
   <textarea class="form-control" rows="3" placeholder="聊聊新鲜事儿..." name="content">{{ old('content') }}</textarea>
